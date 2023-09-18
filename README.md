@@ -5,14 +5,14 @@ Esse projeto foi desenvolvido durante o Curso ReactJS Professional
 ## ✔️ Conhecimentos contemplados
 
 - `Configuração de Rotas`
-- `Consulta API públicas do GitHub e APICep`
+- `Consulta de API públicas do GitHub e APICep`
 
 
 ## ✔️ Tecnologias
 
 - `React`
 - `React Hooks`
-- `Vite`
+- `Axios`
 - `React-Routes`
 
 ## 🛠️ Abrir e rodar o projeto
