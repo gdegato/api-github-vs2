@@ -1,18 +1,12 @@
 # Desafio Rotas React
 
-Esse projeto foi desenvolvido durante o Curso DevSuperior\
-ReactJS Expert
+Esse projeto foi desenvolvido durante o Curso ReactJS Professional
 
 ## ✔️ Conhecimentos contemplados
 
 - `Configuração de Rotas`
-- `Navegação com Link`
-- `Rotas aninhadas para o layout`
-- `Rota ativa usando isActive`
+- `Consulta API públicas do GitHub e APICep`
 
-## ✔️ Figma
-
-<a href="https://www.figma.com/file/5cPiXC5sBQc4B4wIZKlI3i/Desafio-Rotas-React?node-id=1%3A21&mode=dev">Link para o layout Figma</a>
 
 ## ✔️ Tecnologias
 
