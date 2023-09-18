@@ -7,9 +7,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import './styles.css'
 import * as profileService from '../../services/profile-service'
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-
+import { useState } from 'react'
 
 type Props = {
     title: string;
@@ -28,7 +26,6 @@ type Profile = {
 }
 
 export default function Card({ title }: Props) {
-
    
     const [profile, setProfile] = useState<Profile>(
         {
@@ -49,10 +46,10 @@ export default function Card({ title }: Props) {
         const value = event.target.value
         const name = event.target.name
         setFormData({ ...formData, [name]: value })
-        console.log('ouviu input', setFormData({ ...formData, [name]: value }))
+        console.log(setFormData({ ...formData, [name]: value }))
     }
     function handleFormSubmit(event: React.FormEvent<HTMLFormElement>) {
-        console.log('ouviu formulario', formData)
+  
         event.preventDefault()
         profileService.findProfile(formData.profile)
             .then(response => {
@@ -113,7 +110,6 @@ export default function Card({ title }: Props) {
                     </div>
                 </div>
             )}
-
         </>
     )
 }
