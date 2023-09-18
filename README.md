@@ -1,4 +1,4 @@
-# Desafio Rotas React
+# Desafio Consultando APIs - GITHub e APICEP
 
 Esse projeto foi desenvolvido durante o Curso ReactJS Professional
 
