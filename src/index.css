@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --color-bg-primary: #fff;
+  --color-bg-secondary: #1890FF;
+  --color-bg-tertiary: #E6F7FF;
+  --color-bg-quartiary: #F5F5F5;
+
+  --color-font-primary: #fff;
+  --color-font-secondary: #262626;
+  --color-font-tertiary: #7E7E7E;
+  --color-font-quartiary: #BFBFBF;
+
+
+  --color-border-primary: #D9D9D9;
+
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  list-style: none;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: unset;
+}
+
+.dflex {
+  display: flex;
+}
+
+.ds-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.ds-mb20 {
+  margin-bottom: 20px;
+}
+
+.ds-mt30 {
+  margin-top: 20px;
+}
+
+header nav {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+nav {
+  justify-content: space-between;
+}
+
+.menu-item {
+  margin-right: 20px;
+}
+
+.menu-active {
+  font-weight: 700;
+}
+
+.ds-margin-left {
+  padding-left: 20px;
+}
+
+.button {
+  border-radius: 6px;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-font-primary);
+  padding: 0 20px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}

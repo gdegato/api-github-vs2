@@ -1,0 +1,15 @@
+.subtitle {
+    color: var(--color-font-tertiary);
+    letter-spacing: 0.48px;
+    margin-top: 5px;
+
+}
+
+.buttons-align {
+    display: flex;
+    margin-right: 10px;
+}
+
+.buttons-align div {
+    margin-right: 10px;
+}

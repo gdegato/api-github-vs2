@@ -1,0 +1,10 @@
+.ds-header-products{
+        background-color: var(--color-bg-tertiary);
+        color: var(--color-font-secondary);  
+        width: 960px;
+        justify-content: center;
+        display: flex;
+        margin: 0 auto;  
+        height: 60px;
+        align-items: center;
+}
