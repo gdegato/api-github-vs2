@@ -3,6 +3,7 @@ import './styles.css'
 import * as profileService from '../../../services/profile-service'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import NotFound from '../NotFound';
 
 type FormData = {
     profile: string;
@@ -19,6 +20,10 @@ type Profile = {
 export default function Git() {
 
     const navigate = useNavigate();
+
+    const [open, setOpen] = useState(false);
+    const [openNotFound, setOpenNotFound] = useState(false);
+
     const [profile, setProfile] = useState<Profile>(
         {
             avatar_url: '',
@@ -37,18 +42,19 @@ export default function Git() {
         const value = event.target.value
         const name = event.target.name
         setFormData({ ...formData, [name]: value })
-        console.log('ouviu input', setFormData({ ...formData, [name]: value }))
     }
+
     function handleFormSubmit(event: React.FormEvent<HTMLFormElement>) {
-        console.log('ouviu formulario', formData)
         event.preventDefault()
         profileService.findProfile(formData.profile)
             .then(response => {
                 setProfile(response.data)
-
+                setOpen(true)
             }).catch(
                 () => {
-                    navigate('*')
+                    navigate('/git/notfound')
+                    setOpen(false)
+                    setOpenNotFound(true)
                 }
             )
     }
@@ -56,7 +62,7 @@ export default function Git() {
     return (
         <>
             <div className="card">
-                <h2 className="ds-mb20">Encontre um perfil</h2>
+                <h1 className="ds-mb20">Encontre um perfil</h1>
                 <form onSubmit={handleFormSubmit}>
                     <div>
                         <input
@@ -70,42 +76,48 @@ export default function Git() {
                     </div>
                     <div className="dflex ds-mt30">
                         <button
-
                             type='submit' className="button">Encontrar</button>
                     </div>
                 </form>
             </div>
-
-            {profile && (
-                <div className="after-container">
-                    <div className='img-avatar'>
-                        <img
-                            src={profile.avatar_url}
-                            alt=""
-                        />
-                    </div>
-                    <div className="after-container-info">
-                        <h5>Informações</h5>
-                        <div className="after-container-info-paragraph">
-                            <p>
-                                {' '}
-                                <b>Perfil: {profile.url}</b>
-                            </p>
-                            <p>
-                                <b>Seguidores: {profile.followers}</b>
-                            </p>
-                            <p>
-                                {' '}
-                                <b> Localidade:{profile.location}</b>
-                            </p>
-                            <p>
-                                {' '}
-                                <b>Nome:{profile.name}</b>
-                            </p>
+            {
+                (profile && open &&
+                    (
+                        <div className="after-container">
+                            <div className='img-avatar'>
+                                <img
+                                    src={profile.avatar_url}
+                                    alt=""
+                                />
+                            </div>
+                            <div className="after-container-info">
+                                <h5>Informações</h5>
+                                <div className="after-container-info-paragraph">
+                                    <p>
+                                        {' '}
+                                        <b>Perfil: <a href={profile.url}>{profile.url}
+                                        </a></b>
+                                    </p>
+                                    <p>
+                                        <b>Seguidores: {profile.followers}</b>
+                                    </p>
+                                    <p>
+                                        {' '}
+                                        <b> Localidade: {profile.location}</b>
+                                    </p>
+                                    <p>
+                                        {' '}
+                                        <b>Nome: {profile.name}</b>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            )}
+                    )
+                ) || (
+                    openNotFound &&
+                    < NotFound />
+                )
+            }
 
         </>
     )

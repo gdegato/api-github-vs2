@@ -42,7 +42,7 @@ a:hover {
 .ds-container {
   width: 100%;
   max-width: 960px;
-  margin: 0 auto;
+margin-left: 20px;
 }
 
 .ds-mb20 {
@@ -57,10 +57,10 @@ header nav {
   height: 70px;
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 40px;
   width: 100%;
   max-width: 960px;
-  margin: 0 auto;
+ 
 }
 
 nav {
@@ -77,6 +77,10 @@ nav {
 
 .ds-margin-left {
   padding-left: 20px;
+}
+
+.ds-not-found {
+  padding-left: 90px;
 }
 
 .button {

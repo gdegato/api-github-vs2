@@ -3,7 +3,6 @@ import Home from "./routes/Home"
 import HomeBody from "./routes/Home/HomeBody"
 import NotFound from "./routes/Home/NotFound"
 import Git from "./routes/Home/Git"
-import Cep from "./routes/Home/Cep"
 
 
 function App() {
@@ -15,9 +14,9 @@ function App() {
           <Route path='/' element={<Home />}>
             <Route index element={<Navigate to='/home' />} />
             <Route path='/home' element={<HomeBody />} />
-            <Route path='/git' element={<Git />} />
-            <Route path='/cep' element={<Cep />} />
-            <Route path='*' element={<NotFound />} />
+            <Route path='/git' element={<Git />}>
+              <Route path='/git/notfound' element={<NotFound />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

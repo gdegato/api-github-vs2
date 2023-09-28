@@ -7,7 +7,7 @@ export default function Header() {
             <nav>
                 <Link to='/'>
                     <h1>
-                        Consultando APIs
+                    Github API
                     </h1>
                 </Link>
             </nav>
